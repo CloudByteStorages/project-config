@@ -51,7 +51,7 @@ jobs:
 
 projects:
   - name: openstack/cinder
-    check:
+    silent:
       # Remove this after successfully verifying communication with upstream
       # and seeing a posted successful review.
       - noop-check-communication
