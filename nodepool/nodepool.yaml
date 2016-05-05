@@ -49,7 +49,7 @@ providers:
 #TODO: Update the provider username, password, and authurl
     username: admin
     password: 1fd500b0df5397511cef
-    auth-url: 'http://172.16.10.40:5000/v2.0'
+    auth-url: 'loaclhost'
     project-name: 'admin'
     max-servers: 2
     images:
