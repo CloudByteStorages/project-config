@@ -48,8 +48,8 @@ pipelines:
         - event: patchset-created
         - event: change-restored
         - event: comment-added
-         # comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*recheck cloudbyte\s*$
-       	  comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*recheck cloudbyte\s*$
+       	  # comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
            
     success:
       smtp:
@@ -67,7 +67,7 @@ pipelines:
 
 jobs:
   - name: ^dsvm-tempest.*$
-    parameter-function: single_use_node
+    parameter-function: reusable_node
 
 projects:
   - name: openstack/cinder
@@ -78,4 +78,4 @@ projects:
       # silent:
       # Uncomment this job when you have a jenkins slave running and want to
       # test a full Tempest run within devstack.
-      #   - dsvm-tempest-full
+      - dsvm-tempest-full
